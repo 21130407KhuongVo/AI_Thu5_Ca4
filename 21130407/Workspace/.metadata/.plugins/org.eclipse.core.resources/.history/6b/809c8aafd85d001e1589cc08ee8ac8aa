@@ -1,0 +1,12 @@
+package agent_AB;
+
+public class AgentProgram {
+
+	public Action execute(Percept p) {// location, status
+		if (p.getLocationState().toString().equals("DIRTY")) {
+			
+		}
+		return NoOpAction.NO_OP;
+		
+	}
+}
