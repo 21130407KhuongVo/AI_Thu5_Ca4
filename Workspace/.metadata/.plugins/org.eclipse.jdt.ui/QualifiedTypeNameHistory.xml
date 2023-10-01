@@ -4,5 +4,6 @@
     <fullyQualifiedTypeName name="agent_AB.DynamicAction"/>
     <fullyQualifiedTypeName name="agent_AB.Percept"/>
     <fullyQualifiedTypeName name="agent_AB.Environment.LocationState"/>
+    <fullyQualifiedTypeName name="agent_AB.EnvironmentState"/>
     <fullyQualifiedTypeName name="agent_AB.Environment"/>
 </qualifiedTypeNameHistroy>
