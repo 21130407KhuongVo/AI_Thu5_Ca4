@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class DFSGraphSearchAlgo implements ISearchAlgo {
-
-	/**
-	 * for graph search
-	 */
+public class DFSTreeSearchAlgo implements ISearchAlgo {
+	
 	@Override
 	public Node execute(Node root, String goal) {
 		Stack<Node> frontier = new Stack<Node>();
@@ -23,20 +20,17 @@ public class DFSGraphSearchAlgo implements ISearchAlgo {
 				explored.add(current);
 				List<Node> children = current.getChildrenNodes();
 				for (Node child : children) {
-					if (!frontier.contains(child) && !explored.contains(child)) {
+//					if (!frontier.contains(child) && !explored.contains(child)) {
 						frontier.add(child);
 						child.setParent(current);
-					}
+//					}
 				}
 			}
 		}
 
 		return null;
 	}
-
-	/**
-	 * for graph search
-	 */
+	
 	@Override
 	public Node execute(Node root, String start, String goal) {
 		Stack<Node> frontier = new Stack<Node>();
@@ -60,15 +54,14 @@ public class DFSGraphSearchAlgo implements ISearchAlgo {
 				explored.add(current);
 				List<Node> children = current.getChildrenNodes();
 				for (Node child : children) {
-					if (!frontier.contains(child) && !explored.contains(child)) {
+//					if (!frontier.contains(child) && !explored.contains(child)) {
 						frontier.add(child);
 						child.setParent(current);
-					}
+//					}
 				}
 			}
 		}
 
 		return null;
 	}
-
 }
