@@ -20,4 +20,21 @@ public class NodeUtils {
 		} else
 			return new ArrayList<String>();
 	}
+	
+	public static List<String> printPathNCost(Node node){
+		if (node != null) {
+			List<String> result = new ArrayList<String>();
+			result.add(node.getPathCost()+"");
+			result.add(node.getLabel());
+			Node tmp;
+			while ((tmp = node.getParent()) != null) {
+
+				result.add(tmp.getLabel());
+				node = tmp;
+			}
+			Collections.reverse(result);
+			return result;
+		} else
+			return new ArrayList<String>();
+	}
 }

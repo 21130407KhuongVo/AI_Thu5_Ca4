@@ -141,17 +141,84 @@ public class Test {
 		System.out.println(NodeUtils.printPath(result));
 	}
 
+	private static void testExecuteUinformTreeSearch() {
+		nodeS.addEdge(nodeA, 5);
+		nodeS.addEdge(nodeB, 2);
+		nodeS.addEdge(nodeC, 4);
+		nodeA.addEdge(nodeD, 9);
+		nodeA.addEdge(nodeE, 4);
+		nodeB.addEdge(nodeG, 6);
+		nodeC.addEdge(nodeF, 2);
+		nodeD.addEdge(nodeH, 7);
+		nodeE.addEdge(nodeG, 6);
+		nodeF.addEdge(nodeG, 1);
+		ISearchAlgo algol = new UniformTreeSearchAlgo();
+		Node result = algol.execute(nodeS, "G");
+		System.out.println(NodeUtils.printPathNCost(result));
+	}
+
+	private static void testExecuteUinformTreeSearch_3param() {
+		nodeS.addEdge(nodeA, 5);
+		nodeS.addEdge(nodeB, 2);
+		nodeS.addEdge(nodeC, 4);
+		nodeA.addEdge(nodeD, 9);
+		nodeA.addEdge(nodeE, 4);
+		nodeB.addEdge(nodeG, 6);
+		nodeC.addEdge(nodeF, 2);
+		nodeD.addEdge(nodeH, 7);
+		nodeE.addEdge(nodeG, 6);
+		nodeF.addEdge(nodeG, 1);
+		ISearchAlgo algol = new UniformTreeSearchAlgo();
+		Node result = algol.execute(nodeS, "A", "G");
+		System.out.println(NodeUtils.printPathNCost(result));
+	}
+
+	private static void testExecuteUinformGraphSearch() {
+		nodeS.addEdge(nodeA, 5);
+		nodeS.addEdge(nodeB, 2);
+		nodeS.addEdge(nodeC, 4);
+		nodeA.addEdge(nodeD, 9);
+		nodeA.addEdge(nodeE, 4);
+		nodeB.addEdge(nodeG, 6);
+		nodeC.addEdge(nodeF, 2);
+		nodeD.addEdge(nodeH, 7);
+		nodeE.addEdge(nodeG, 6);
+		nodeF.addEdge(nodeG, 1);
+		ISearchAlgo algol = new UniformGraphSearchAlgo();
+		Node result = algol.execute(nodeS, "G");
+		System.out.println(NodeUtils.printPathNCost(result));
+	}
+
+	private static void testExecuteUinformGraphSearch_3param() {
+		nodeS.addEdge(nodeA, 5);
+		nodeS.addEdge(nodeB, 2);
+		nodeS.addEdge(nodeC, 4);
+		nodeA.addEdge(nodeD, 9);
+		nodeA.addEdge(nodeE, 4);
+		nodeB.addEdge(nodeG, 6);
+		nodeC.addEdge(nodeF, 2);
+		nodeD.addEdge(nodeH, 7);
+		nodeE.addEdge(nodeG, 6);
+		nodeF.addEdge(nodeG, 1);
+		ISearchAlgo algol = new UniformGraphSearchAlgo();
+		Node result = algol.execute(nodeS, "A", "G");
+		System.out.println(NodeUtils.printPathNCost(result));
+	}
+
 	public static void main(String[] args) {
 		// -finished-----------
-		testExecuteFromBFSGraphSearch();
-		testExecuteFromBFSGraphSearch_3param();
-		testExecuteFromDFSGraphSearch();
-		testExecuteFromDFSGraphSearch_3param();
-		testExecuteFromBFSTreeSearch();
-		testExecuteFromBFSTreeSearch_3param();
-		testExecuteFromDFSTreeSearch();
-		testExecuteFromDFSTreeSearch_3param();
+//		testExecuteFromBFSGraphSearch();
+//		testExecuteFromBFSGraphSearch_3param();
+//		testExecuteFromDFSGraphSearch();
+//		testExecuteFromDFSGraphSearch_3param();
+//		testExecuteFromBFSTreeSearch();
+//		testExecuteFromBFSTreeSearch_3param();
+//		testExecuteFromDFSTreeSearch();
+//		testExecuteFromDFSTreeSearch_3param();
+//		testExecuteUinformTreeSearch();
+//		testExecuteUinformTreeSearch_3param();
 		// -unfinished--------
-
+		testExecuteUinformGraphSearch();
+		testExecuteUinformGraphSearch_3param();
 	}
 }
