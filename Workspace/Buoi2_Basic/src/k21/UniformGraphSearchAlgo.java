@@ -9,7 +9,7 @@ public class UniformGraphSearchAlgo implements ISearchAlgo {
 
 	@Override
 	public Node execute(Node root, String goal) {
-		PriorityQueue<Node> frontier = new PriorityQueue<Node>();
+		PriorityQueue<Node> frontier = new PriorityQueue<Node>(new NodeComparator());
 		List<Node> explored = new ArrayList<Node>();
 		frontier.add(root);
 		explored.add(root);

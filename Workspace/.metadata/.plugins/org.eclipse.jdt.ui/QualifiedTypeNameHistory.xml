@@ -15,11 +15,11 @@
     <fullyQualifiedTypeName name="k21.BFSTreeSearchAlgo"/>
     <fullyQualifiedTypeName name="k21.DFSTreeSearchAlgo"/>
     <fullyQualifiedTypeName name="k21.ISearchAlgo"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="k21.UniformTreeSearchAlgo"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="k21.Edge"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="k21.Node"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

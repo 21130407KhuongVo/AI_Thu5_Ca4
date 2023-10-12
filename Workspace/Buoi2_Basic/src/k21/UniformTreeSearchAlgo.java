@@ -8,7 +8,7 @@ public class UniformTreeSearchAlgo implements ISearchAlgo {
 
 	@Override
 	public Node execute(Node root, String goal) {
-		PriorityQueue<Node> frontier = new PriorityQueue<Node>();
+		PriorityQueue<Node> frontier = new PriorityQueue<Node>(new NodeComparator());
 		frontier.add(root);
 		while (!frontier.isEmpty()) {
 			Node current = frontier.poll();

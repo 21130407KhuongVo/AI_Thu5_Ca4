@@ -204,6 +204,22 @@ public class Test {
 		Node result = algol.execute(nodeS, "A", "G");
 		System.out.println(NodeUtils.printPathNCost(result));
 	}
+	
+	private static void testDepthLimitedSearch() {
+		nodeS.addEdge(nodeA, 5);
+		nodeS.addEdge(nodeB, 2);
+		nodeS.addEdge(nodeC, 4);
+		nodeA.addEdge(nodeD, 9);
+		nodeA.addEdge(nodeE, 4);
+		nodeB.addEdge(nodeG, 6);
+		nodeC.addEdge(nodeF, 2);
+		nodeD.addEdge(nodeH, 7);
+		nodeE.addEdge(nodeG, 6);
+		nodeF.addEdge(nodeG, 1);
+		Depth_LimitedSearch algol = new Depth_LimitedSearch();
+		Node result = algol.execute(nodeS, "G", 1);
+		System.out.println(NodeUtils.printPath(result));
+	}
 
 	public static void main(String[] args) {
 		// -finished-----------
@@ -217,8 +233,9 @@ public class Test {
 //		testExecuteFromDFSTreeSearch_3param();
 //		testExecuteUinformTreeSearch();
 //		testExecuteUinformTreeSearch_3param();
+//		testExecuteUinformGraphSearch();
+//		testExecuteUinformGraphSearch_3param();
 		// -unfinished--------
-		testExecuteUinformGraphSearch();
-		testExecuteUinformGraphSearch_3param();
+		testDepthLimitedSearch();
 	}
 }
