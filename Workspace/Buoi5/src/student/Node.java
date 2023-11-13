@@ -1,6 +1,7 @@
-package puzzle_8.student;
+package student;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Node {
 	private int[][] state;
@@ -94,6 +95,11 @@ public class Node {
 		}
 
 		return output.toString();
+	}
+
+	public List<Node> getSuccessors() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

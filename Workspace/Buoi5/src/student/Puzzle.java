@@ -1,4 +1,4 @@
-package puzzle_8.student;
+package student;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -63,6 +63,16 @@ public class Puzzle {
 	public int computeH1(Node currentState) {
 		int output = 0;
 		/* Enter your code here */
+		for (int i = 0; i < MAX_ROW; i++) {
+			for (int j = 0; j < MAX_COL; j++) {
+				int tileCurrent = currentState.getTile(i, j);
+				int tileGoal = goalState.getTile(j, i);
+				if (tileCurrent != 0 && tileCurrent != tileGoal) {
+					output++;
+				}
+			}
+		}
+
 		return output;
 	}
 
@@ -70,13 +80,19 @@ public class Puzzle {
 	public int computeH2(Node currentState) {
 		int result = 0;
 		/* Enter your code here */
+		for (int i = 0; i < MAX_ROW; i++) {
+			for (int j = 0; j < MAX_COL; j++) {
+				int[] currentPos = currentState.getLocation(i);
+				int[] goalPos = goalState.getLocation(j);
+				result += PuzzleUtils.manhattanDistance(currentPos, goalPos);
+			}
+		}
 		return result;
 	}
 
-
 	public Node moveWhiteTile(Node currentState, char operator) {
 		Node result = new Node(currentState);
-		int[] whiteTile = currentState.getLocation(0);//get white tile
+		int[] whiteTile = currentState.getLocation(0);// get white tile
 		if (operator == 'u') {// Case-1: Move tile UP
 			// New postion of tile if move UP
 			int row = whiteTile[0] - 1;
@@ -92,17 +108,41 @@ public class Puzzle {
 
 		else if (operator == 'd') {// Case-2: Move tile DOWN
 			/* Enter your code here */
-
+			int row = whiteTile[0] + 1;
+			int col = whiteTile[1];
+			if (row >= 0) {// Tile stands inside the map
+				int tmp = currentState.getTile(row, col);
+				result.updateTile(row, col, 0);
+				result.updateTile(whiteTile[0], whiteTile[1], tmp);
+				result.setH(computeH2(result));
+				return result;
+			}
 		}
 
 		else if (operator == 'l') {// Case-3: Move tile LEFT
 			/* Enter your code here */
-
+			int row = whiteTile[0];
+			int col = whiteTile[1]+1;
+			if (row >= 0) {// Tile stands inside the map
+				int tmp = currentState.getTile(row, col);
+				result.updateTile(row, col, 0);
+				result.updateTile(whiteTile[0], whiteTile[1], tmp);
+				result.setH(computeH2(result));
+				return result;
+			}
 		}
 
 		else if (operator == 'r') {// Case-4: Move tile RIGHT
 			/* Enter your code here */
-
+			int row = whiteTile[0];
+			int col = whiteTile[1] - 1;
+			if (row >= 0) {// Tile stands inside the map
+				int tmp = currentState.getTile(row, col);
+				result.updateTile(row, col, 0);
+				result.updateTile(whiteTile[0], whiteTile[1], tmp);
+				result.setH(computeH2(result));
+				return result;
+			}
 		}
 		return null;
 	}

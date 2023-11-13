@@ -1,4 +1,4 @@
-package puzzle_8.student;
+package student;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,14 +7,15 @@ public class TestNode {
 
 	public static void main(String[] args) {
 		Puzzle p = new Puzzle();
-		p.readInput("txt/PuzzleMap.txt", "txt/PuzzleGoalState.txt");
+		p.readInput("/home/khuongvo/Documents/Git/AI_Thu5_Ca4/AI_Thu5_Ca4/Workspace/Buoi5/src/txt/PuzzleMap.txt",
+				"/home/khuongvo/Documents/Git/AI_Thu5_Ca4/AI_Thu5_Ca4/Workspace/Buoi5/src/txt/PuzzleGoalState.txt");
 
 		Node initialState = p.getInitialState();
 		Node tmp = new Node(initialState);
 		System.out.println(initialState.equals(tmp));
 //		Node goalState = p.getGoalState();
 //		System.out.println(p.getInitialState());
-		System.out.println("H: "+initialState.getH());
+		System.out.println("H: " + initialState.getH());
 //		System.out.println(Arrays.toString(initialState.getWhiteTilePosition()));
 //		System.out.println(p.getGoalState());
 		Node re = p.moveWhiteTile(initialState, 'r');

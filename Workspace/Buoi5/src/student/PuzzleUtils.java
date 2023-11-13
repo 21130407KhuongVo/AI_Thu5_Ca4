@@ -1,4 +1,4 @@
-package puzzle_8.student;
+package student;
 
 import java.util.Comparator;
 
